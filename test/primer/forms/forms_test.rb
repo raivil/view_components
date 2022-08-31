@@ -59,6 +59,16 @@ class Primer::Forms::FormsTest < Minitest::Test
     end
   end
 
+  def test_renders_correct_form_structure_for_a_file_field
+    render_preview :file_field_form
+
+    assert_selector "input[type='file'][name='my_file'][id='my_file']"
+    assert_selector "label[for='my_file']", text: "Organic spreadsheet" do
+      assert_selector ".FormControl-caption", text: "The answer to life, the universe, and everything"
+    end
+  end
+
+
   def test_includes_the_given_note
     render_preview :single_text_field_form
 

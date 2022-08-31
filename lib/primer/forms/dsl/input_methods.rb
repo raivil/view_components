@@ -33,6 +33,10 @@ module Primer
           add_input Separator.new
         end
 
+        def file_field(**options)
+          add_input FileFieldInput.new(builder: builder, form: form, **options)
+        end
+
         # START text input methods
 
         def text_field(**options, &block)

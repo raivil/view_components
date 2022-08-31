@@ -9,6 +9,8 @@ module Primer
 
       def text_field_and_checkbox_form; end
 
+      def file_field_form; end
+
       def horizontal_form; end
 
       def composed_form; end
